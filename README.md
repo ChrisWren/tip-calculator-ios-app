@@ -15,19 +15,22 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 * [ ] UI animations
-* [ ] Remembering the bill amount across app restarts (if <10mins)
-* [ ] Using locale-specific currency and currency thousands separators.
-* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Remembering the bill amount across app restarts (if <10mins)
+* [x] Using locale-specific currency and currency thousands separators.
+* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
+- [x] Added ability to send a bill split SMS based on the number of people accounted for on the bill.
 
-- [ ] List anything else that you can get done to improve the app functionality!
+<img src="http://i.imgur.com/jvcbfnE.png" 
+alt="IMAGE ALT TEXT HERE" width="240" height="400"  />
+<img src="http://i.imgur.com/qWe1ecM.png" width="240" height="400"/>
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/I63x8ku.gif?1' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/L2QImJE.gif?1' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
