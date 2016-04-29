@@ -30,7 +30,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="400"  />
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/I63x8ku.gif?1' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/L2QImJE' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
