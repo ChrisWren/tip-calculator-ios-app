@@ -22,9 +22,9 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 - [x] Added ability to send a bill split SMS based on the number of people accounted for on the bill.
 
-<img src="https://www.dropbox.com/s/rlhaxthjkeo2p6e/IMG_7995.PNG?raw=1" 
+<img src="http://i.imgur.com/jvcbfnE.png" 
 alt="IMAGE ALT TEXT HERE" width="240" height="400"  />
-<img src="https://www.dropbox.com/s/yx1um1rrqghw9qy/IMG_7994.PNG?raw=1" width="240" height="400"/>
+<img src="http://i.imgur.com/qWe1ecM.png" width="240" height="400"/>
 
 ## Video Walkthrough 
 
