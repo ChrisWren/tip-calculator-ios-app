@@ -58,7 +58,7 @@
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="WF7-ja-ef2">
-                                <rect key="frame" x="27" y="393" width="273" height="29"/>
+                                <rect key="frame" x="29" y="347" width="273" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="18%"/>
@@ -74,6 +74,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B9J-Ft-cxo">
+                                <rect key="frame" x="121" y="527" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Text Split Bill"/>
+                                <connections>
+                                    <action selector="onTapSendBillSplit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0a9-fX-fwF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of People" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="19g-3m-KLb">
+                                <rect key="frame" x="91" y="401" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" id="aht-Ek-5rQ">
+                                <rect key="frame" x="20" y="440" width="291" height="67"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -90,6 +109,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="gpL-l1-ZbW" id="TJk-bl-72J"/>
+                        <outlet property="personNumPicker" destination="aht-Ek-5rQ" id="qIZ-GW-L4L"/>
                         <outlet property="tipControl" destination="WF7-ja-ef2" id="Gd4-nf-MAg"/>
                         <outlet property="tipLabel" destination="qER-Do-zbE" id="aDD-bt-ZFh"/>
                         <outlet property="totalLabel" destination="FAs-SY-tbZ" id="JyM-KN-yko"/>
