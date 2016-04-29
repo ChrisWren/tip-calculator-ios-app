@@ -81,7 +81,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func onTapSendBillSplit(sender: AnyObject) {
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        let splitAmount = defaults.doubleForKey("bill_amount") / Double(pickerData[(personNumPicker.selectedRowInComponent(0))])!
+        let splitAmount = defaults.doubleForKey("total_bill_amount") / Double(pickerData[(personNumPicker.selectedRowInComponent(0))])!
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .CurrencyStyle
         formatter.locale = NSLocale.currentLocale()
@@ -136,6 +136,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setDouble(billAmount, forKey: "bill_amount")
+        defaults.setDouble(total, forKey: "total_bill_amount")
         defaults.synchronize()
         
     }
