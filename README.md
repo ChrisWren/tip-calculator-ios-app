@@ -21,9 +21,10 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 - [x] Added ability to send a bill split SMS based on the number of people accounted for on the bill.
-- ![](https://www.dropbox.com/s/rlhaxthjkeo2p6e/IMG_7995.PNG?dl=0)
-- ![](https://www.dropbox.com/s/yx1um1rrqghw9qy/IMG_7994.PNG?dl=0)
-- [ ] List anything else that you can get done to improve the app functionality!
+
+<img src="https://www.dropbox.com/s/rlhaxthjkeo2p6e/IMG_7995.PNG?raw=1" 
+alt="IMAGE ALT TEXT HERE" width="240" height="400"  />
+<img src="https://www.dropbox.com/s/yx1um1rrqghw9qy/IMG_7994.PNG?raw=1" width="240" height="400"/>
 
 ## Video Walkthrough 
 
