@@ -15,6 +15,7 @@
 		153627D11CD14B990086F486 /* tipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153627D01CD14B990086F486 /* tipsTests.swift */; };
 		153627DC1CD14B990086F486 /* tipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153627DB1CD14B990086F486 /* tipsUITests.swift */; };
 		153627EE1CD1643E0086F486 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153627ED1CD1643E0086F486 /* SettingsViewController.swift */; };
+		1552B4D41CD72C430095C1E6 /* ThemeSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552B4D31CD72C430095C1E6 /* ThemeSwitcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		153627DB1CD14B990086F486 /* tipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsUITests.swift; sourceTree = "<group>"; };
 		153627DD1CD14B990086F486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		153627ED1CD1643E0086F486 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1552B4D31CD72C430095C1E6 /* ThemeSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeSwitcher.swift; path = tips/ThemeSwitcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		153627AF1CD14B920086F486 = {
 			isa = PBXGroup;
 			children = (
+				1552B4D31CD72C430095C1E6 /* ThemeSwitcher.swift */,
 				153627BA1CD14B950086F486 /* tips */,
 				153627CF1CD14B990086F486 /* tipsTests */,
 				153627DA1CD14B990086F486 /* tipsUITests */,
@@ -261,6 +264,7 @@
 			files = (
 				153627BE1CD14B970086F486 /* ViewController.swift in Sources */,
 				153627BC1CD14B950086F486 /* AppDelegate.swift in Sources */,
+				1552B4D41CD72C430095C1E6 /* ThemeSwitcher.swift in Sources */,
 				153627EE1CD1643E0086F486 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +492,7 @@
 				153627E21CD14B990086F486 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		153627E31CD14B990086F486 /* Build configuration list for PBXNativeTarget "tipsTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				153627E51CD14B990086F486 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		153627E61CD14B990086F486 /* Build configuration list for PBXNativeTarget "tipsUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +510,7 @@
 				153627E81CD14B990086F486 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

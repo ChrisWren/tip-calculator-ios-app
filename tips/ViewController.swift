@@ -9,10 +9,13 @@
 import UIKit
 import MessageUI
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, MFMessageComposeViewControllerDelegate {
-    @IBOutlet weak var tipLabel: UILabel!
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    @IBOutlet weak var tipAndSplitContainerView: UIView!
     @IBOutlet weak var billField: UITextField!
+    @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var billFieldContainerView: UIView!
+
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var personNumPicker: UIPickerView!
     
@@ -27,8 +30,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         formatter.locale = NSLocale.currentLocale()
         tipLabel.text = formatter.stringFromNumber(0)
         totalLabel.text = formatter.stringFromNumber(0)
+            
+        let billFieldPlaceholder = NSLocale.currentLocale().objectForKey(NSLocaleCurrencySymbol) as? String
+        
+        self.billField!.placeholder = billFieldPlaceholder
         
         let defaults = NSUserDefaults.standardUserDefaults()
+        let isDarkMode = defaults.boolForKey("darker_theme")
+        var color = UIColor.blackColor()
+        if isDarkMode {
+            color = UIColor.whiteColor()
+        }
+        
+        let str = NSAttributedString(string: billFieldPlaceholder!, attributes: [NSForegroundColorAttributeName:color])
+        billField.attributedPlaceholder = str
+        
         let defaultTipPercentIndex = defaults.integerForKey("default_tip_percentage_index")
         if let cachedBillAmount = defaults.objectForKey("bill_amount") as? Double {
             if (cachedBillAmount != 0) {
@@ -37,7 +53,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 formatter.locale = NSLocale.currentLocale()
                 billField.text = formatter.stringFromNumber(defaults.doubleForKey("bill_amount"))
             }
-            
         }
         personNumPicker.delegate = self
         personNumPicker.dataSource = self
@@ -45,23 +60,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         tipControl.selectedSegmentIndex = defaultTipPercentIndex
         updateTotal()
         billField.becomeFirstResponder()
-    }
-    
-    func canSendText() -> Bool {
-        return MFMessageComposeViewController.canSendText()
-    }
-    
-    // Configures and returns a MFMessageComposeViewController instance
-    func configuredMessageComposeViewController(messageText :String) -> MFMessageComposeViewController {
-        let messageComposeVC = MFMessageComposeViewController()
-        messageComposeVC.messageComposeDelegate = self  //  Make sure to set this property to self, so that the controller can be dismissed!
-        messageComposeVC.body = messageText
-        return messageComposeVC
-    }
-    
-    // MFMessageComposeViewControllerDelegate callback - dismisses the view controller when the user is finished with it
-    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -85,21 +83,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .CurrencyStyle
         formatter.locale = NSLocale.currentLocale()
-        
-        // Make sure the device can send text messages
-        if (canSendText()) {
-            // Obtain a configured MFMessageComposeViewController
-            let messageComposeVC = configuredMessageComposeViewController("Hey, your part of the split bill is \(formatter.stringFromNumber(splitAmount)!)")
             
-            // Present the configured MFMessageComposeViewController instance
-            // Note that the dismissal of the VC will be handled by the messageComposer instance,
-            // since it implements the appropriate delegate call-back
-            presentViewController(messageComposeVC, animated: true, completion: nil)
-        } else {
-            // Let the user know if his/her device isn't able to send text messages
-            let errorAlert = UIAlertView(title: "Cannot Send Text Message", message: "Your device is not able to send text messages.", delegate: self, cancelButtonTitle: "OK")
-            errorAlert.show()
-        }
+            let activityViewController = UIActivityViewController(activityItems: ["Hey, your part of the split bill is \(formatter.stringFromNumber(splitAmount)!)"], applicationActivities: nil)
+            presentViewController(activityViewController, animated: true, completion: {})
     }
     
     
@@ -113,9 +99,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         view.endEditing(true)
     }
     
+    override func viewDidAppear(animated: Bool) {
+
+    }
+    
     @IBAction func onEditingChanged(sender: AnyObject) {
         updateTotal()
-        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let isDarkMode = defaults.boolForKey("darker_theme")
+        var color = UIColor.blackColor()
+        if isDarkMode {
+            color = UIColor.whiteColor()
+        }
+        billField.textColor = color
     }
     
     func updateTotal() {
@@ -139,6 +135,27 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         defaults.setDouble(total, forKey: "total_bill_amount")
         defaults.synchronize()
         
+    }
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let isDarkMode = defaults.boolForKey("darker_theme")
+        var color = UIColor.blackColor()
+        if isDarkMode {
+            color = UIColor.whiteColor()
+        }
+        
+        return NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName:color])
+    }
+    override func viewWillAppear(animated: Bool) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let isDarkMode = defaults.boolForKey("darker_theme")
+        switchTheme(self.view, isDarkMode: isDarkMode)
+        switchTheme(self.billFieldContainerView, isDarkMode: isDarkMode)
+        var color = UIColor.blackColor()
+        if isDarkMode {
+            color = UIColor.whiteColor()
+        }
+        billField.textColor = color
     }
 }
 
