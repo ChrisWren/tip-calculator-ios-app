@@ -23,8 +23,6 @@ The following **additional** features are implemented:
 - [x] Added ability to send a bill split message based on the number of people accounted for on the bill.
 
 
-<img src="http://i.imgur.com/jvcbfnE.png" 
-alt="IMAGE ALT TEXT HERE" width="240" height="400"  />
 <img src="http://i.imgur.com/qWe1ecM.png" width="240" height="400"/>
 
 ## Video Walkthrough 
